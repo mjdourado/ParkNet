@@ -8,22 +8,21 @@ using Microsoft.EntityFrameworkCore;
 using ParkNet.Data;
 using ParkNet.Data.Entities;
 
-namespace ParkNet.Pages.Prices.TariffsTickets
+namespace ParkNet.Pages.Prices.TariffsTickets;
+
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+    private readonly ParkNet.Data.ApplicationDbContext _context;
+
+    public IndexModel(ParkNet.Data.ApplicationDbContext context)
     {
-        private readonly ParkNet.Data.ApplicationDbContext _context;
+        _context = context;
+    }
 
-        public IndexModel(ParkNet.Data.ApplicationDbContext context)
-        {
-            _context = context;
-        }
+    public IList<TariffTicket> TariffTicket { get;set; } = default!;
 
-        public IList<TariffTicket> TariffTicket { get;set; } = default!;
-
-        public async Task OnGetAsync()
-        {
-            TariffTicket = await _context.TariffTickets.ToListAsync();
-        }
+    public async Task OnGetAsync()
+    {
+        TariffTicket = await _context.TariffTickets.ToListAsync();
     }
 }

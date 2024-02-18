@@ -11,12 +11,11 @@ namespace ParkNet.Data.Entities
         public IdentityUser User { get; set; }
         public int InitBalance { get; set; }
         [Required]
-        public int FinalBalance { get; set; }
-        [Required]
         public DateTime Date { get; set; }
         [Required]
         public string Type { get; set; }
         [Required]
         public string Description { get; set; }
+        public int FinalBalance { get; set; }
     }
 }
