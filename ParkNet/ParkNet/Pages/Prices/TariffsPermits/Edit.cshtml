@@ -1,0 +1,55 @@
+﻿@page
+@model ParkNet.Pages.Prices.TariffsPermits.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TariffPermit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TariffPermit.Id" />
+            <div class="form-group">
+                <label asp-for="TariffPermit.VehicleType" class="control-label"></label>
+                <input asp-for="TariffPermit.VehicleType" class="form-control" />
+                <span asp-validation-for="TariffPermit.VehicleType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TariffPermit.AnualPrice" class="control-label"></label>
+                <input asp-for="TariffPermit.AnualPrice" class="form-control" />
+                <span asp-validation-for="TariffPermit.AnualPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TariffPermit.SemesterPrice" class="control-label"></label>
+                <input asp-for="TariffPermit.SemesterPrice" class="form-control" />
+                <span asp-validation-for="TariffPermit.SemesterPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TariffPermit.TrimesterPrice" class="control-label"></label>
+                <input asp-for="TariffPermit.TrimesterPrice" class="form-control" />
+                <span asp-validation-for="TariffPermit.TrimesterPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TariffPermit.MonthlyPrice" class="control-label"></label>
+                <input asp-for="TariffPermit.MonthlyPrice" class="form-control" />
+                <span asp-validation-for="TariffPermit.MonthlyPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

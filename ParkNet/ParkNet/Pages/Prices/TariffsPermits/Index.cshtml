@@ -1,0 +1,60 @@
+﻿@page
+@model ParkNet.Pages.Prices.TariffsPermits.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TariffPermit[0].VehicleType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TariffPermit[0].AnualPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TariffPermit[0].SemesterPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TariffPermit[0].TrimesterPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TariffPermit[0].MonthlyPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TariffPermit) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnualPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SemesterPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrimesterPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MonthlyPrice)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
