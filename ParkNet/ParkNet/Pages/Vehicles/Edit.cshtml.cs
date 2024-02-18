@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -51,6 +52,7 @@ public class EditModel : PageModel
             return Page();
         }
 
+        Vehicle.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         _context.Attach(Vehicle).State = EntityState.Modified;
 
         try

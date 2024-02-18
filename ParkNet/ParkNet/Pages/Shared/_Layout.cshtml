@@ -26,6 +26,14 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Parks/Index">Parks</a>
                         </li>
                         <li class="nav-item">
+                            @if (User.Identity.IsAuthenticated && User.Identity.Name == "admin@parknet.pt")
+                            {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/ParkEditor/Index">Park Editor</a>
+                            </li>
+                            }
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Prices/Index">Prices</a>
                         </li>
                         <li class="nav-item">
@@ -43,6 +51,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Vehicles/Index">Vehicles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Transactions/Index">Wallet</a>
                             </li>
                         }
                     </ul>

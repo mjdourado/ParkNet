@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -9,70 +10,69 @@ using Microsoft.EntityFrameworkCore;
 using ParkNet.Data;
 using ParkNet.Data.Entities;
 
-namespace ParkNet.Pages.Profile
-{
-    public class EditModel : PageModel
-    {
-        private readonly ParkNet.Data.ApplicationDbContext _context;
+namespace ParkNet.Pages.Profile;
 
-        public EditModel(ParkNet.Data.ApplicationDbContext context)
+public class EditModel : PageModel
+{
+    private readonly ParkNet.Data.ApplicationDbContext _context;
+
+    public EditModel(ParkNet.Data.ApplicationDbContext context)
+    {
+        _context = context;
+    }
+
+    [BindProperty]
+    public Customer Customer { get; set; } = default!;
+
+    public async Task<IActionResult> OnGetAsync(int? id)
+    {
+        if (id == null)
         {
-            _context = context;
+            return NotFound();
         }
 
-        [BindProperty]
-        public Customer Customer { get; set; } = default!;
-
-        public async Task<IActionResult> OnGetAsync(int? id)
+        var customer =  await _context.Customers.FirstOrDefaultAsync(m => m.Id == id);
+        if (customer == null)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            return NotFound();
+        }
+        Customer = customer;
+        return Page();
+    }
 
-            var customer =  await _context.Customers.FirstOrDefaultAsync(m => m.Id == id);
-            if (customer == null)
-            {
-                return NotFound();
-            }
-            Customer = customer;
-           ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
+    // To protect from overposting attacks, enable the specific properties you want to bind to.
+    // For more details, see https://aka.ms/RazorPagesCRUD.
+    public async Task<IActionResult> OnPostAsync()
+    {
+        if (!ModelState.IsValid)
+        {
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        Customer.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        _context.Attach(Customer).State = EntityState.Modified;
+
+        try
         {
-            if (!ModelState.IsValid)
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!CustomerExists(Customer.Id))
             {
-                return Page();
+                return NotFound();
             }
-
-            _context.Attach(Customer).State = EntityState.Modified;
-
-            try
+            else
             {
-                await _context.SaveChangesAsync();
+                throw;
             }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CustomerExists(Customer.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return RedirectToPage("./Index");
         }
 
-        private bool CustomerExists(int id)
-        {
-            return _context.Customers.Any(e => e.Id == id);
-        }
+        return RedirectToPage("./Index");
+    }
+
+    private bool CustomerExists(int id)
+    {
+        return _context.Customers.Any(e => e.Id == id);
     }
 }

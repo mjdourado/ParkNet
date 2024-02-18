@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -21,7 +22,6 @@ namespace ParkNet.Pages.Profile
 
         public IActionResult OnGet()
         {
-        ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return Page();
         }
 
@@ -36,6 +36,7 @@ namespace ParkNet.Pages.Profile
                 return Page();
             }
 
+            Customer.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             _context.Customers.Add(Customer);
             await _context.SaveChangesAsync();
 
