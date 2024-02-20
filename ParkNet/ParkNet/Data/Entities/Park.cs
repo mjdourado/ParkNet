@@ -20,8 +20,7 @@ public class Park
     public int PhoneNumber { get; set; }
     [Required]
     public string Email { get; set; }
-    [Required]
     public int NumberOfFloors { get; set; }
-    [Required]
+    public List<List<string>> ParkSections { get; set; }
     public int MaxCapacity { get; set; }
 }
