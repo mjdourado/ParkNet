@@ -9,13 +9,14 @@ public class Transaction
     public int Id { get; set; }
     public string UserId { get; set; }
     public IdentityUser User { get; set; }
-    public int InitBalance { get; set; }
+    public float Balance { get; set; }
+    public float InitBalance { get; set; }
     [Required]
     public DateTime Date { get; set; }
     [Required]
     public TransactionType Type { get; set; }
     [Required]
-    public int FinalBalance { get; set; }
+    public float FinalBalance { get; set; }
 }
 
 public enum TransactionType

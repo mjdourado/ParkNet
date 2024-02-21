@@ -28,7 +28,6 @@ public class Customer
     public int PhoneNumber { get; set; }
     [Required]
     public PaymentMethod PaymentMethod { get; set; }
-    public int Balance { get; set; } = 0;
     public string UserId { get; set; }
     public IdentityUser User { get; set; }
 }

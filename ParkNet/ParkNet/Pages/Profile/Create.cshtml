@@ -65,13 +65,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="Customer.PaymentMethod" class="control-label"></label>
-                <input asp-for="Customer.PaymentMethod" class="form-control" />
+                <select asp-for="Customer.PaymentMethod" class="form-control">
+                    <option value="">Selecione um método de pagamento</option>
+                    <option value="Paypal">Paypal</option>
+                    <option value="DebitCard">Debit Card</option>
+                    <option value="CreditCard">Credit Card</option>
+                </select>
                 <span asp-validation-for="Customer.PaymentMethod" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Customer.Balance" class="control-label"></label>
-                <input asp-for="Customer.Balance" class="form-control" />
-                <span asp-validation-for="Customer.Balance" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

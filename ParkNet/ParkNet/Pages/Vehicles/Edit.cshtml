@@ -16,7 +16,11 @@
             <input type="hidden" asp-for="Vehicle.Id" />
             <div class="form-group">
                 <label asp-for="Vehicle.Type" class="control-label"></label>
-                <input asp-for="Vehicle.Type" class="form-control" />
+                <select asp-for="Vehicle.Type" class="form-control">
+                    <option value="">Select a type of vehicle</option>
+                    <option value="Car">Car</option>
+                    <option value="Motorcycle">Motorcycle</option>
+                </select>
                 <span asp-validation-for="Vehicle.Type" class="text-danger"></span>
             </div>
             <div class="form-group">
