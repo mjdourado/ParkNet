@@ -5,42 +5,86 @@
     ViewData["Title"] = "Index";
 }
 
-<html>
-<head>
-    <style>
-        h1 {
-            text-align: center;
-        }
-        .image-container {
-            text-align: center;
-            margin-top: 50px;
-        }
+<h1>Index</h1>
 
-        .project-link {
-            display: inline-block;
-            margin: 20px;
-            text-align: center;
-            text-decoration: none;
-            color: #000;
-        }
-    </style>
-</head>
-<body>
-    <h1>Our Parks</h1>
-    <br />
-    <div class="image-container">
-        <a class="project-link" asp-area="" asp-page="/Parks/Guimaraes/Index">
-            <img src="https://media-cdn.tripadvisor.com/media/photo-c/768x250/0e/4f/a2/80/add-photos-of.jpg" alt="Imagem 1" style="width:300px;height:200px;">
-            <p>Gimarães</p>
-        </a>
-        <a class="project-link" asp-area="" asp-page="/Parks/Braga/Index">
-            <img src="https://www.remessaonline.com.br/blog/wp-content/uploads/2023/09/braga-portugal-1170x780.jpg.optimal.jpg" alt="Imagem 2" style="width:300px;height:200px;">
-            <p>Braga</p>
-        </a>
-        <a class="project-link" asp-area="" asp-page="/Parks/Famalicao/Index">
-            <img src="https://www.impulsiveaddiction.com/wp-content/uploads/2022/02/visitar-famalicao.jpg" alt="Imagem 3" style="width:300px;height:200px;">
-            <p>Vila Nova de Famalicão</p>
-        </a>
-    </div>
-</body>
-</html>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Park[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Park[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Park[0].City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Park[0].Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Park[0].CountryCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Park[0].PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Park[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Park[0].ImageData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Park[0].ParkLayout)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Park[0].IsFull)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Park) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParkLayout)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsFull)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

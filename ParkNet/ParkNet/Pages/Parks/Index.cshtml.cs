@@ -2,28 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ParkNet.Data;
 using ParkNet.Data.Entities;
 
-namespace ParkNet.Pages.Parks
+namespace ParkNet.Pages.Parks;
+
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+    private readonly ParkNet.Data.ApplicationDbContext _context;
+
+    public IndexModel(ParkNet.Data.ApplicationDbContext context)
     {
-        private readonly ParkNet.Data.ApplicationDbContext _context;
+        _context = context;
+    }
 
-        public IndexModel(ParkNet.Data.ApplicationDbContext context)
-        {
-            _context = context;
-        }
+    public IList<Park> Park { get;set; } = default!;
 
-        public IList<Park> Park { get;set; } = default!;
-
-        public async Task OnGetAsync()
-        {
-            Park = await _context.Parks.ToListAsync();
-        }
+    public async Task OnGetAsync()
+    {
+        Park = await _context.Parks.ToListAsync();
     }
 }

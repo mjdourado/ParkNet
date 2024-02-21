@@ -7,7 +7,7 @@ public class Vehicle
 {
     public int Id { get; set; }
     [Required]
-    public string Type { get; set; }
+    public VehicleType Type { get; set; }
     [Required]
     public string LicensePlate { get; set; }
     [Required]
@@ -20,4 +20,10 @@ public class Vehicle
     public int Year { get; set; }
     public string UserId { get; set; }
     public IdentityUser User { get; set; }
+}
+
+public enum VehicleType
+{
+    Car,
+    Motorcycle
 }

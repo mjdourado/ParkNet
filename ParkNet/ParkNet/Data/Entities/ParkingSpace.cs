@@ -12,8 +12,7 @@ public class ParkingSpace
     public Floor Floor { get; set; }
     [Required]
     public string Name { get; set; }
-    [Required]
-    public string Status { get; set; }
+    public bool IsFree { get; set; }
     [Required]
     public string Type { get; set; }
 }
