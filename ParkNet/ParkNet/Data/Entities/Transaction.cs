@@ -16,6 +16,8 @@ public class Transaction
     [Required]
     public TransactionType Type { get; set; }
     [Required]
+    public float Amount { get; set; }
+    [Required]
     public float FinalBalance { get; set; }
 }
 

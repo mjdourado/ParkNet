@@ -17,6 +17,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddRazorPages();
 
 builder.Services.AddScoped<ParkRepository>();
+builder.Services.AddScoped<TransactionRepository>();
 
 var app = builder.Build();
 
