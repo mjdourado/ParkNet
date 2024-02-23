@@ -7,9 +7,16 @@ public class TariffTicket
     [Key]
     public int Id { get; set; }
     [Required]
-    public string VehicleType { get; set; }
+    public VehicleType Type { get; set; }
     [Required]
-    public TimeOnly Time { get; set; }
+    public Period Time { get; set; }
     [Required]
-    public float Price { get; set; }
+    public decimal Price { get; set; }
+}
+
+public enum Period
+{
+    QuarterHourly,
+    HalfHourly,
+    Hourly
 }

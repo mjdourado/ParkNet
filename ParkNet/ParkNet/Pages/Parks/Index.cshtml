@@ -41,9 +41,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Park[0].ParkLayout)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Park[0].IsFull)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -76,9 +73,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ParkLayout)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsFull)
             </td>
             <td>
                     @if (Model.User.Identity.IsAuthenticated && Model.User.Identity.Name == "admin@parknet.pt")

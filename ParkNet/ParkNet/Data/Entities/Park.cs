@@ -23,7 +23,5 @@ public class Park
     [Required]
     public string ImageData { get; set; }
     [Required]
-    [MaxLength(1000)]
     public string ParkLayout { get; set; }
-    public bool IsFull { get; set; }
 }

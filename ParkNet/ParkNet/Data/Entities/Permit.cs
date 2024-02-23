@@ -13,7 +13,6 @@ public class Permit
     [Required]
     public DateTime StartDate { get; set; } = DateTime.Now;
     public DateTime EndDate { get; set; }
-    public string Status { get; set; }
     public int ParkId { get; set; }
     public int FloorId { get; set; }
     public int ParkingSpaceId { get; set; }
@@ -52,10 +51,4 @@ public enum PermitType
     Quarterly,
     Biannualy,
     Yearly
-}
-
-public enum PermitStatus
-{
-    Free,
-    Ocuppied
 }

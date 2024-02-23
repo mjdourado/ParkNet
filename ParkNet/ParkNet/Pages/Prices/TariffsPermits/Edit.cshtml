@@ -20,24 +20,19 @@
                 <span asp-validation-for="TariffPermit.VehicleType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TariffPermit.Yearly" class="control-label"></label>
-                <input asp-for="TariffPermit.Yearly" class="form-control" />
-                <span asp-validation-for="TariffPermit.Yearly" class="text-danger"></span>
+                <label asp-for="TariffPermit.PermitType" class="control-label"></label>
+                <select asp-for="TariffPermit.PermitType" class="form-control">
+                    <option value="">Yearly</option>
+                    <option value="">Biannualy</option>
+                    <option value="">Quarterly</option>
+                    <option value="">Monthly</option>
+                </select>
+                <span asp-validation-for="TariffPermit.PermitType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TariffPermit.Biannualy" class="control-label"></label>
-                <input asp-for="TariffPermit.Biannualy" class="form-control" />
-                <span asp-validation-for="TariffPermit.Biannualy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TariffPermit.Quarterly" class="control-label"></label>
-                <input asp-for="TariffPermit.Quarterly" class="form-control" />
-                <span asp-validation-for="TariffPermit.Quarterly" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TariffPermit.Monthly" class="control-label"></label>
-                <input asp-for="TariffPermit.Monthly" class="form-control" />
-                <span asp-validation-for="TariffPermit.Monthly" class="text-danger"></span>
+                <label asp-for="TariffPermit.Price" class="control-label"></label>
+                <input asp-for="TariffPermit.Price" class="form-control" />
+                <span asp-validation-for="TariffPermit.Price" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

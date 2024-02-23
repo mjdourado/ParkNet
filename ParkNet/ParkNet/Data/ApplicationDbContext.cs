@@ -14,6 +14,8 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<TariffPermit> TariffPermits { get; set; }
     public DbSet<TariffTicket> TariffTickets { get; set; }
     public DbSet<Ticket> Tickets { get; set; }
+    public DbSet<Ins> Ins { get; set; }
+    public DbSet<Outs> Outs { get; set; }
     public DbSet<Transaction> Transactions { get; set; }
     public DbSet<Vehicle> Vehicles { get; set; }
 

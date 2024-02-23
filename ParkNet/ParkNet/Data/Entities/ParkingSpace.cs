@@ -14,5 +14,5 @@ public class ParkingSpace
     public string Name { get; set; }
     public bool IsFree { get; set; }
     [Required]
-    public string Type { get; set; }
+    public VehicleType Type { get; set; }
 }

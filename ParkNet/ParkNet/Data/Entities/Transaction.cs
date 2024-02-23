@@ -9,20 +9,21 @@ public class Transaction
     public int Id { get; set; }
     public string UserId { get; set; }
     public IdentityUser User { get; set; }
-    public float Balance { get; set; }
-    public float InitBalance { get; set; }
+    public decimal Balance { get; set; }
+    public decimal InitBalance { get; set; }
     [Required]
     public DateTime Date { get; set; } = DateTime.Now;
     [Required]
     public TransactionType Type { get; set; }
     [Required]
-    public float Amount { get; set; }
+    public decimal Amount { get; set; }
     [Required]
-    public float FinalBalance { get; set; }
+    public decimal FinalBalance { get; set; }
 }
 
 public enum TransactionType
 {
     Deposit,
-    Withdrawal
+    Withdrawal,
+    Debit
 }

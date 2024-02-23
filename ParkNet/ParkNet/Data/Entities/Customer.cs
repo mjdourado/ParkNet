@@ -30,9 +30,15 @@ public class Customer
     public PaymentMethod PaymentMethod { get; set; }
     [Required]
     public string PaymentData { get; set; }
-    public string ImageData { get; set; }
     public string UserId { get; set; }
     public IdentityUser User { get; set; }
+    public decimal Balance { get; set; }
+
+    public Customer()
+    {
+        Transaction transaction = new Transaction();
+        Balance = transaction.Balance;
+    }
 }
 
 public enum PaymentMethod
