@@ -21,7 +21,7 @@ public class Permit
 public enum PermitType
 {
     Monthly,
-    Trimestral,
-    Semestral,
+    Quarterly,
+    Biannualy,
     Yearly
 }
