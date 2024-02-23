@@ -28,6 +28,9 @@ public class Customer
     public int PhoneNumber { get; set; }
     [Required]
     public PaymentMethod PaymentMethod { get; set; }
+    [Required]
+    public string PaymentData { get; set; }
+    public string ImageData { get; set; }
     public string UserId { get; set; }
     public IdentityUser User { get; set; }
 }

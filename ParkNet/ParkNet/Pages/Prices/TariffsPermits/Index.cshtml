@@ -20,16 +20,16 @@
                 @Html.DisplayNameFor(model => model.TariffPermit[0].VehicleType)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TariffPermit[0].AnualPrice)
+                @Html.DisplayNameFor(model => model.TariffPermit[0].Yearly)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TariffPermit[0].SemesterPrice)
+                @Html.DisplayNameFor(model => model.TariffPermit[0].Biannualy)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TariffPermit[0].TrimesterPrice)
+                @Html.DisplayNameFor(model => model.TariffPermit[0].Quarterly)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TariffPermit[0].MonthlyPrice)
+                @Html.DisplayNameFor(model => model.TariffPermit[0].Monthly)
             </th>
             <th></th>
         </tr>
@@ -41,16 +41,16 @@
                 @Html.DisplayFor(modelItem => item.VehicleType)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AnualPrice)
+                @Html.DisplayFor(modelItem => item.Yearly)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SemesterPrice)
+                @Html.DisplayFor(modelItem => item.Biannualy)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TrimesterPrice)
+                @Html.DisplayFor(modelItem => item.Quarterly)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MonthlyPrice)
+                @Html.DisplayFor(modelItem => item.Monthly)
             </td>
             <td>
                     @if (Model.User.Identity.IsAuthenticated && Model.User.Identity.Name == "admin@parknet.pt")

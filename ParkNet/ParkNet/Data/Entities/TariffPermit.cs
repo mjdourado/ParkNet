@@ -8,8 +8,8 @@ public class TariffPermit
     public int Id { get; set; }
     [Required]
     public string VehicleType { get; set; }
-    public float AnualPrice { get; set; }
-    public float SemesterPrice { get; set; }
-    public float TrimesterPrice { get; set; }
-    public float MonthlyPrice { get; set; }
+    public float Yearly { get; set; }
+    public float Biannualy { get; set; }
+    public float Quarterly { get; set; }
+    public float Monthly { get; set; }
 }

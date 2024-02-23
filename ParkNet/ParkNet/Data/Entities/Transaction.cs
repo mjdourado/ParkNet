@@ -12,7 +12,7 @@ public class Transaction
     public float Balance { get; set; }
     public float InitBalance { get; set; }
     [Required]
-    public DateTime Date { get; set; }
+    public DateTime Date { get; set; } = DateTime.Now;
     [Required]
     public TransactionType Type { get; set; }
     [Required]

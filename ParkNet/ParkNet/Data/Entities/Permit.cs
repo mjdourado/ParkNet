@@ -10,12 +10,39 @@ public class Permit
     public PermitType Type { get; set; }
     public int VehicleId { get; set; }
     public Vehicle Vehicle { get; set; }
+    [Required]
+    public DateTime StartDate { get; set; } = DateTime.Now;
+    public DateTime EndDate { get; set; }
+    public string Status { get; set; }
+    public int ParkId { get; set; }
     public int ParkingSpaceId { get; set; }
     public ParkingSpace ParkingSpace { get; set; }
-    [Required]
-    public DateOnly StartDate { get; set; }
-    public DateOnly EndDate { get; set; }
-    public string Status { get; set; }
+
+
+    public Permit()
+    {
+        EndDate = GetEndDate();
+    }
+
+    public DateTime GetEndDate()
+    {
+        if (Type == PermitType.Monthly)
+        {
+            return StartDate.AddMonths(1);
+        }
+        else if (Type == PermitType.Quarterly)
+        {
+            return StartDate.AddMonths(3);
+        }
+        else if (Type == PermitType.Biannualy)
+        {
+            return StartDate.AddMonths(6);
+        }
+        else
+        {
+            return StartDate.AddYears(1);
+        }
+    }
 }
 
 public enum PermitType
