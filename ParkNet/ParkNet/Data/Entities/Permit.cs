@@ -15,6 +15,7 @@ public class Permit
     public DateTime EndDate { get; set; }
     public string Status { get; set; }
     public int ParkId { get; set; }
+    public int FloorId { get; set; }
     public int ParkingSpaceId { get; set; }
     public ParkingSpace ParkingSpace { get; set; }
 
@@ -51,4 +52,10 @@ public enum PermitType
     Quarterly,
     Biannualy,
     Yearly
+}
+
+public enum PermitStatus
+{
+    Free,
+    Ocuppied
 }
