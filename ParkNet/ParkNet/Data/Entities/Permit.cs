@@ -7,7 +7,7 @@ public class Permit
     [Key]
     public int Id { get; set; }
     [Required]
-    public string Type { get; set; }
+    public PermitType Type { get; set; }
     public int VehicleId { get; set; }
     public Vehicle Vehicle { get; set; }
     public int ParkingSpaceId { get; set; }
@@ -16,4 +16,12 @@ public class Permit
     public DateOnly StartDate { get; set; }
     public DateOnly EndDate { get; set; }
     public string Status { get; set; }
+}
+
+public enum PermitType
+{
+    Monthly,
+    Trimestral,
+    Semestral,
+    Yearly
 }
