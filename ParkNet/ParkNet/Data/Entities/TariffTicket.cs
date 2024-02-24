@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ParkNet.Data.Entities;
+﻿namespace ParkNet.Data.Entities;
 
 public class TariffTicket
 {
@@ -16,7 +14,7 @@ public class TariffTicket
 
 public enum Period
 {
-    QuarterHourly,
-    HalfHourly,
-    Hourly
+    QuarterHourly = 15,
+    HalfHourly = 30,
+    Hourly = 60
 }

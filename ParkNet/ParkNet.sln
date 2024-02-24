@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkNet", "ParkNet\ParkNet.csproj", "{D9034FD4-75BD-4912-B01B-CC23DB5D3368}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkNet.Test", "ParkNetTest\ParkNet.Test.csproj", "{BE8BC342-FF4D-4F88-B5CA-ABA340580764}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D9034FD4-75BD-4912-B01B-CC23DB5D3368}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9034FD4-75BD-4912-B01B-CC23DB5D3368}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9034FD4-75BD-4912-B01B-CC23DB5D3368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE8BC342-FF4D-4F88-B5CA-ABA340580764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE8BC342-FF4D-4F88-B5CA-ABA340580764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE8BC342-FF4D-4F88-B5CA-ABA340580764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE8BC342-FF4D-4F88-B5CA-ABA340580764}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

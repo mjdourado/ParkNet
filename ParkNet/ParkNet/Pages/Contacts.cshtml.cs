@@ -1,12 +1,8 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+namespace ParkNet.Pages;
 
-namespace ParkNet.Pages
+public class ContactsModel : PageModel
 {
-    public class ContactsModel : PageModel
+    public void OnGet()
     {
-        public void OnGet()
-        {
-        }
     }
 }

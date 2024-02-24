@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ParkNet.Data;
-using ParkNet.Data.Entities;
-
-namespace ParkNet.Pages.Profile;
+﻿namespace ParkNet.Pages.Profile;
 
 [Authorize]
 public class EditModel : PageModel

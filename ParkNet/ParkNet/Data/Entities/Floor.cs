@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ParkNet.Data.Entities;
+﻿namespace ParkNet.Data.Entities;
 
 public class Floor
 {
@@ -12,4 +10,6 @@ public class Floor
     public int ParkId { get; set; }
     [Required]
     public Park Park { get; set; }
+    [Required]
+    public List<ParkingSpace> ParkingSpaces { get; set; }
 }

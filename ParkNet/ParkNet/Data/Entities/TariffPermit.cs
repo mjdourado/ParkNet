@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ParkNet.Data.Entities;
+﻿namespace ParkNet.Data.Entities;
 
 public class TariffPermit
 {

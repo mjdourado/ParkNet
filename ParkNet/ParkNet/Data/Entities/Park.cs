@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ParkNet.Data.Entities;
+﻿namespace ParkNet.Data.Entities;
 
 public class Park
 {
@@ -24,4 +22,6 @@ public class Park
     public string ImageData { get; set; }
     [Required]
     public string ParkLayout { get; set; }
+    [Required]
+    public List<Floor> Floors { get; set; }
 }

@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations;
-
-namespace ParkNet.Data.Entities;
+﻿namespace ParkNet.Data.Entities;
 
 public class Transaction
 {

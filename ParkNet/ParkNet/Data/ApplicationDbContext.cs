@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using ParkNet.Data.Entities;
-
-namespace ParkNet.Data;
+﻿namespace ParkNet.Data;
 
 public class ApplicationDbContext : IdentityDbContext
 {
