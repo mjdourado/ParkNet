@@ -15,6 +15,7 @@ public class Permit
     public int FloorId { get; set; }
     public int ParkingSpaceId { get; set; }
     public ParkingSpace ParkingSpace { get; set; }
+    public float Price { get; set; }
 
 
     public Permit()
