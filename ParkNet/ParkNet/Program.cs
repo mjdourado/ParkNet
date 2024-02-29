@@ -18,6 +18,8 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddScoped<ParkRepository>();
 builder.Services.AddScoped<TransactionRepository>();
+builder.Services.AddScoped<PermitRepository>();
+
 
 var app = builder.Build();
 

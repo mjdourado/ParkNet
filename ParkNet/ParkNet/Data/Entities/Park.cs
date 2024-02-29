@@ -22,6 +22,5 @@ public class Park
     public string ImageData { get; set; }
     [Required]
     public string ParkLayout { get; set; }
-    [Required]
     public List<Floor> Floors { get; set; }
 }

@@ -12,11 +12,15 @@ public class CreateModel : PageModel
 
     public IActionResult OnGet()
     {
+        var permitTypes = Enum.GetValues(typeof(PermitType)).Cast<PermitType>().ToList();
+        ViewData["PermitType"] = new SelectList(permitTypes);
         return Page();
     }
 
     [BindProperty]
     public TariffPermit TariffPermit { get; set; } = default!;
+    [BindProperty]
+    public Permit Permit { get; set; }
 
     // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
     public async Task<IActionResult> OnPostAsync()

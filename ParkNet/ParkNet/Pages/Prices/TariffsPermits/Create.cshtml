@@ -16,7 +16,7 @@
             <div class="form-group">
                 <label asp-for="TariffPermit.VehicleType" class="control-label"></label>
                 <select asp-for="TariffPermit.VehicleType" class="form-control">
-                    <option value="">Select a type of vehicle</option>
+                    <option value=""></option>
                     <option value="Car">Car</option>
                     <option value="Motorcycle">Motorcycle</option>
                 </select>
@@ -25,10 +25,11 @@
             <div class="form-group">
                 <label asp-for="TariffPermit.PermitType" class="control-label"></label>
                 <select asp-for="TariffPermit.PermitType" class="form-control">
-                    <option value="">Yearly</option>
-                    <option value="">Biannualy</option>
-                    <option value="">Quarterly</option>
-                    <option value="">Monthly</option>
+                    <option value=""></option>
+                    <option value="Yearly">Yearly</option>
+                    <option value="Biannualy">Biannualy</option>
+                    <option value="Quarterly">Quarterly</option>
+                    <option value="Monthly">Monthly</option>
                 </select>
                 <span asp-validation-for="TariffPermit.PermitType" class="text-danger"></span>
             </div>
