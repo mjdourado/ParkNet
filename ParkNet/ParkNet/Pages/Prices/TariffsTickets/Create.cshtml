@@ -5,7 +5,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Add Price</h1>
 
 <h4>TariffTicket</h4>
 <hr />
@@ -24,12 +24,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="TariffTicket.Time" class="control-label"></label>
-                <input asp-for="TariffTicket.Time" class="form-control" />
+                <select asp-for="TariffTicket.Time" class="form-control">
+                    <option value="">Select a time</option>
+                    <option value="QuarterHourly">>= 15 minutes</option>
+                    <option value="HalfHourly">>= 30 minutes</option>
+                    <option value="Hourly">>= 60 minutes</option>
+                </select>
                 <span asp-validation-for="TariffTicket.Time" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TariffTicket.Price" class="control-label"></label>
-                <input asp-for="TariffTicket.Price" class="form-control" />
+                <input asp-for="TariffTicket.Price" class="form-control" type="number" step="0.01"/>
                 <span asp-validation-for="TariffTicket.Price" class="text-danger"></span>
             </div>
             <div class="form-group">

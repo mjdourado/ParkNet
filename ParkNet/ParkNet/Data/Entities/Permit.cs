@@ -53,13 +53,11 @@ public enum PermitType
     Yearly
 }
 
-public class PermitViewModel
+public class PermitModel
 {
     public int Id { get; set; }
     public PermitType Type { get; set; }
     public int VehicleId { get; set; }
-    public string VehiclePlate { get; set; }
-    public DateTime StartDate { get; set; }
     public int ParkId { get; set; }
     public int FloorId { get; set; }
     public int ParkingSpaceId { get; set; }
