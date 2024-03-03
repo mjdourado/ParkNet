@@ -23,5 +23,6 @@ Status do Projeto: O projecto possuí maioria das funcionalidades, mas foi const
 - Ausência de maneio de excepções
 - Nem todos os métodos foram convertidos em Async
 - Não consegui fazer testes
+- Validação de saldos positivos para efectuar transações
 
 Contato: mjoaodourado@gmail.com
