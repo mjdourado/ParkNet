@@ -1,0 +1,57 @@
+﻿@page
+@model ParkNet.Pages.Tickets.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Tickets</h1>
+
+<p>
+    <a asp-page="Create">Buy New Ticket</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].Vehicle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].TicketNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].Park)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].IsValid)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Ticket)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vehicle.Brand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TicketNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Park.Name)
+                </td>
+                <td>
+                    @if (item.IsValid)
+                    {
+                        <span style="color: green;">@Html.DisplayFor(modelItem => item.IsValid)</span>
+                    }
+                    else
+                    {
+                        <span style="color: red;">@Html.DisplayFor(modelItem => item.IsValid)</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

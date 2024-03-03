@@ -1,0 +1,77 @@
+﻿@page
+@model ParkNet.Pages.Parks.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Park</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Park.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Park.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Park.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Park.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Park.City)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Park.City)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Park.Country)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Park.Country)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Park.CountryCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Park.CountryCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Park.PhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Park.PhoneNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Park.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Park.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Park.ImageData)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="@Model.Park.ImageData" alt="Imagem do Parque" style="max-width: 100px; max-height: 100px;">
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Park.ParkLayout)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Park.ParkLayout)
+        </dd>
+    </dl>
+</div>
+<div>
+    @if(User.Identity.IsAuthenticated && User.Identity.Name == "admin@parknet.pt")
+    {
+        <a asp-page="./Edit" asp-route-id="@Model.Park.Id">Edit</a>
+        <a asp-page="./Delete" asp-route-id="@Model.Park.Id">Delete</a>
+    }
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,78 @@
+﻿@page
+@using ParkNet.Data.Entities
+@model ParkNet.Pages.Transactions.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>My Wallet</h1>
+<br />
+<p>
+    <a asp-page="Create">New Transaction</a>
+</p>
+@if(Model.Transaction.Count == 0)
+{
+    <div style="float: right; width: 200px; height: 100px; background-color: yellow; text-align: center; line-height: 100px;">
+        Current Balance: 0
+    </div>
+}
+else if (Model.Transaction.Count > 0 && Model.Transaction[0].FinalBalance > 0)
+{
+    <div style="float: right; width: 200px; height: 100px; background-color: forestgreen; text-align: center; line-height: 100px;">
+        Current Balance:
+        @Html.DisplayFor(model => model.Transaction[0].FinalBalance)
+    </div>
+}
+else
+{
+    <div style="float: right; width: 200px; height: 100px; background-color: red; text-align: center; line-height: 100px;">
+        Current Balance:
+        @Html.DisplayFor(model => model.Transaction[0].FinalBalance)
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Transaction[0].InitBalance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transaction[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transaction[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transaction[0].Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transaction[0].FinalBalance)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Transaction) {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.InitBalance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalBalance)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

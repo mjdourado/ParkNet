@@ -1,0 +1,75 @@
+﻿@page
+@model ParkNet.Pages.Parks.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Park</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Park.Id" />
+            <div class="form-group">
+                <label asp-for="Park.Name" class="control-label"></label>
+                <input asp-for="Park.Name" class="form-control" />
+                <span asp-validation-for="Park.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Park.Address" class="control-label"></label>
+                <input asp-for="Park.Address" class="form-control" />
+                <span asp-validation-for="Park.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Park.City" class="control-label"></label>
+                <input asp-for="Park.City" class="form-control" />
+                <span asp-validation-for="Park.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Park.Country" class="control-label"></label>
+                <input asp-for="Park.Country" class="form-control" />
+                <span asp-validation-for="Park.Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Park.CountryCode" class="control-label"></label>
+                <input asp-for="Park.CountryCode" class="form-control" />
+                <span asp-validation-for="Park.CountryCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Park.PhoneNumber" class="control-label"></label>
+                <input asp-for="Park.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Park.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Park.Email" class="control-label"></label>
+                <input asp-for="Park.Email" class="form-control" />
+                <span asp-validation-for="Park.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Park.ImageData" class="control-label"></label>
+                <input asp-for="Park.ImageData" class="form-control" />
+                <span asp-validation-for="Park.ImageData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Park.ParkLayout" class="control-label"></label>
+                <input asp-for="Park.ParkLayout" class="form-control" />
+                <span asp-validation-for="Park.ParkLayout" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

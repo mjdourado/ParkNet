@@ -1,0 +1,20 @@
+﻿@page
+@model ParkNet.Pages.Statistics.IndexModel
+@{
+}
+
+<h1>Statistics</h1>
+
+<form method="get" asp-page="./Statistics">
+    <div class="form-group">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" class="form-control" />
+    </div>
+    ´<br />
+    <button type="submit" class="btn btn-primary">Generate Report</button>
+</form>

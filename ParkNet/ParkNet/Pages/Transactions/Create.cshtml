@@ -1,0 +1,42 @@
+﻿@page
+@model ParkNet.Pages.Transactions.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>New Transaction</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Transactions.Type" class="control-label"></label>
+                <select asp-for="Transactions.Type" class="form-control">
+                    <option value="">Select a type of Transaction</option>
+                    <option value="Deposit">Deposit</option>
+                    <option value="Withdrawal">Withdrawal</option>
+                </select>
+                <span asp-validation-for="Transactions.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transactions.Amount" class="control-label"></label>
+                <input asp-for="Transactions.Amount" class="form-control" type="number" step="0.01"/>
+                <span asp-validation-for="Transactions.Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to Transactions</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

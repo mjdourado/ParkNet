@@ -1,0 +1,49 @@
+﻿@page
+@model ParkNet.Pages.Ins.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Ins</h1>
+
+<p>
+    <a asp-page="Create">Register New Entering</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.In[0].Vehicle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.In[0].TicketNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.In[0].ParkingSpaceId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.In[0].Enter)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.In) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vehicle.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParkingSpaceId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Enter)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
