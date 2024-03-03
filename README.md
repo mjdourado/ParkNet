@@ -20,5 +20,6 @@ Status do Projeto: O projecto possuí maioria das funcionalidades, mas foi const
 - Ausência de validações
 - Ausência de protecção para overposting
 - Ausência de maneio de excepções
+- Nem todos os métodos foram convertidos em Async
 
 Contato: mjoaodourado@gmail.com
