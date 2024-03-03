@@ -15,6 +15,7 @@ M CCCC M
 C MMMM C
 
 Cada letra corresponde a um espaço de estacionamento sendo C para Carros e M para Motas. O ponto final (".") refere-se à mudança de piso.
+No que diz respeito às Permits, podem ser compradas no separador Buy e estão válidas no período de tempo definido. Relativamente aos tickets, quando se compra apenas se selecciona o parque e o veículo e é atribuído um número de bilhete. Esse número é usado para fazer In e Out e só nestas alturas é que são calculados os timings, preços, escolhido o piso e o lugar e feita a transação.
 
 Status do Projeto: O projecto possuí maioria das funcionalidades, mas foi construído por uma pessoa em tenra aprendizagem, enquanto trabalha fulltime noutra área, pelo que se encontra com muitas falhas, nomeadamente:
 - Ausência de validações
